@@ -20,17 +20,17 @@ public class FornecedorController {
     }
 
     @GetMapping("/{id}")
-    public FornecedorModel Buscar(long id){
+    public FornecedorModel Buscar(@PathVariable long id){
         return fornecedorService.Buscar(id);
     }
 
     @PostMapping
-    public FornecedorModel Criar(FornecedorModel fornecedorModel){
+    public FornecedorModel Criar(@RequestBody FornecedorModel fornecedorModel){
         return fornecedorService.Criar(fornecedorModel);
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<?> Deletar(long id){
+    public ResponseEntity<?> Deletar(@PathVariable long id){
         fornecedorService.deletar(id);
         return ResponseEntity.noContent().build();
     }
